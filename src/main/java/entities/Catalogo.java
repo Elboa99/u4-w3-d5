@@ -2,7 +2,7 @@ package entities;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -13,7 +13,7 @@ public abstract class Catalogo {
     private UUID codice_ISBN;
 
     private String titolo;
-    private Date annoPubblicazione;
+    private LocalDate annoPubblicazione;
     private int numPagine;
 
     // Getters and setters
@@ -33,11 +33,11 @@ public abstract class Catalogo {
         this.titolo = titolo;
     }
 
-    public Date getAnnoPubblicazione() {
+    public LocalDate getAnnoPubblicazione() {
         return annoPubblicazione;
     }
 
-    public void setAnnoPubblicazione(Date annoPubblicazione) {
+    public void setAnnoPubblicazione(LocalDate annoPubblicazione) {
         this.annoPubblicazione = annoPubblicazione;
     }
 
