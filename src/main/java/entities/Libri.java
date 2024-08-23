@@ -4,11 +4,9 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class Libri extends Catalogo {
-
     private String autore;
     private String genere;
 
-    // Getters e Setters
     public String getAutore() {
         return autore;
     }
@@ -25,3 +23,4 @@ public class Libri extends Catalogo {
         this.genere = genere;
     }
 }
+

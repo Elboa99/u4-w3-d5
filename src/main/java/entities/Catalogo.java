@@ -8,7 +8,6 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Catalogo {
-
     @Id
     @GeneratedValue
     private UUID codice_ISBN;
@@ -17,7 +16,7 @@ public abstract class Catalogo {
     private Date annoPubblicazione;
     private int numPagine;
 
-    // Getters e Setters
+    // Getters and setters
     public UUID getCodice_ISBN() {
         return codice_ISBN;
     }

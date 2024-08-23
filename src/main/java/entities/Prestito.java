@@ -3,30 +3,33 @@ package entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 public class Prestito {
-
     @Id
     @GeneratedValue
-    private Long id;
+    private UUID idPrestito;
 
     @ManyToOne
-    @JoinColumn(name = "utente_id")
+    @JoinColumn(name = "utente_id", referencedColumnName = "numeroTessera")
     private Utente utente;
 
-    private String elementoPrestato;
+    @ManyToOne
+    @JoinColumn(name = "elemento_prestato", referencedColumnName = "codice_ISBN")
+    private Catalogo catalogo;
+
     private Date dataInizioPrestito;
     private Date dataRestituzionePrevista;
     private Date dataRestituzioneEffettiva;
 
-    // Getters e Setters
-    public Long getId() {
-        return id;
+    // Getters and setters
+    public UUID getIdPrestito() {
+        return idPrestito;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdPrestito(UUID idPrestito) {
+        this.idPrestito = idPrestito;
     }
 
     public Utente getUtente() {
@@ -37,12 +40,12 @@ public class Prestito {
         this.utente = utente;
     }
 
-    public String getElementoPrestato() {
-        return elementoPrestato;
+    public Catalogo getCatalogo() {
+        return catalogo;
     }
 
-    public void setElementoPrestato(String elementoPrestato) {
-        this.elementoPrestato = elementoPrestato;
+    public void setCatalogo(Catalogo catalogo) {
+        this.catalogo = catalogo;
     }
 
     public Date getDataInizioPrestito() {
@@ -61,7 +64,7 @@ public class Prestito {
         this.dataRestituzionePrevista = dataRestituzionePrevista;
     }
 
-    public Date getDataRestituzioneEffettiva() {
+    Date getDataRestituzioneEffettiva() {
         return dataRestituzioneEffettiva;
     }
 

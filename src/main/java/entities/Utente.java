@@ -9,7 +9,6 @@ import java.util.Set;
 
 @Entity
 public class Utente {
-
     @Id
     private int numeroTessera;
     private String nome;
@@ -19,7 +18,7 @@ public class Utente {
     @OneToMany(mappedBy = "utente")
     private Set<Prestito> prestiti;
 
-    // Getters e Setters
+    
     public int getNumeroTessera() {
         return numeroTessera;
     }
@@ -60,4 +59,3 @@ public class Utente {
         this.prestiti = prestiti;
     }
 }
-

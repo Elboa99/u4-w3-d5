@@ -6,11 +6,9 @@ import jakarta.persistence.Enumerated;
 
 @Entity
 public class Riviste extends Catalogo {
-
     @Enumerated(EnumType.STRING)
     private Periodicita periodicita;
 
-    // Getters e Setters
     public Periodicita getPeriodicita() {
         return periodicita;
     }
@@ -19,7 +17,6 @@ public class Riviste extends Catalogo {
         this.periodicita = periodicita;
     }
 
-    // Enumerazione per la periodicità
     public enum Periodicita {
         SETTIMANALE, MENSILE, ANNUALE
     }
