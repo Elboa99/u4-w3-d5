@@ -15,11 +15,11 @@ public class Main {
             Libri libro = new Libri();
             libro.setCodice_ISBN(UUID.randomUUID());
             libro.setTitolo("Libro " + i);
-            libro.setAutore("Autore " + ((i % 5) + 1)); // 5 autori diversi
+            libro.setAutore("Autore " + ((i % 5) + 1));
             libro.setGenere("Genere " + ((i % 3) + 1));
             libro.setAnnoPubblicazione(LocalDate.now().minusYears(i));
             libro.setNumPagine(100 + i * 10);
-            libriDAO.addCatalogItem(libro);
+            libriDAO.save(libro);
         }
     }
 }
